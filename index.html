@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taskflow — To-do list</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <nav class="topbar">
+        <a class="brand" href="#"><span class="brand-mark">i</span>intercircle</a>
+        <div class="nav-links">
+          <a class="active" href="#circle">My circle</a>
+          <a href="#moments">Moments</a>
+          <a href="#notes">Notes</a>
+        </div>
+        <div class="profile"><span>ST</span><i></i></div>
+      </nav>
+
+      <section class="intro" id="circle">
+        <div>
+          <p class="eyebrow">TUESDAY, 03 NOVEMBER</p>
+          <h1>Keep the good<br /><em>close.</em></h1>
+          <p class="lead">A gentler way to stay present with the people who make up your world.</p>
+        </div>
+        <button class="add-person" id="addPerson"><span>+</span> Add a person</button>
+      </section>
+
+      <section class="circle-area" aria-label="Relationship circle">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
+        <div class="connection c1"></div><div class="connection c2"></div><div class="connection c3"></div><div class="connection c4"></div>
+        <button class="person p1" data-person="Maya"><span class="avatar coral">M</span><b>Maya</b><small>2 days ago</small></button>
+        <button class="person p2" data-person="Dad"><span class="avatar yellow">D</span><b>Dad</b><small>Yesterday</small></button>
+        <button class="person p3" data-person="Noah"><span class="avatar blue">N</span><b>Noah</b><small>5 days ago</small></button>
+        <button class="person p4" data-person="Aunt Ro"><span class="avatar pink">R</span><b>Aunt Ro</b><small>1 week ago</small></button>
+        <button class="person p5" data-person="Eli"><span class="avatar green">E</span><b>Eli</b><small>3 days ago</small></button>
+        <div class="you"><div class="you-ring"><span>ST</span></div><strong>You</strong><small>At the center</small></div>
+        <div class="nudge"><span class="spark">✦</span><p><b>A small nudge</b><br />Maya has a big presentation Friday.</p><button id="sendLove">Send love <span>→</span></button></div>
+      </section>
+
+      <section class="bottom-grid" id="moments">
+        <article class="moment-card">
+          <div class="card-heading"><div><p class="eyebrow">RECENT MOMENT</p><h2>A slow Sunday<br />with Dad</h2></div><button class="round-button" aria-label="Open moment">↗</button></div>
+          <p class="moment-copy">“We walked to the old bakery and talked about nothing in particular.”</p>
+          <div class="moment-meta"><span class="mini-avatar yellow">D</span><span>Oct 29 · 42 min together</span></div>
+        </article>
+        <article class="prompt-card" id="notes">
+          <p class="eyebrow">A QUESTION FOR YOU</p>
+          <h2>What’s one tiny thing someone did recently that made you feel seen?</h2>
+          <button class="text-button" id="reflect">Take a minute <span>→</span></button>
+          <div class="flourish">✳</div>
+        </article>
+        <article class="streak-card">
+          <p class="eyebrow">YOUR RHYTHM</p>
+          <div class="streak-number">12<span>days</span></div>
+          <p>of showing up for your circle</p>
+          <div class="week" aria-label="Activity this week"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="today"></i><i></i></div>
+          <div class="week-labels"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
+        </article>
+      </section>
+    </main>
+
+    <dialog id="dialog"><button class="close" id="closeDialog">×</button><p class="eyebrow">A LITTLE MOMENT</p><h2 id="dialogTitle">Reach out to Maya</h2><p id="dialogText">A few sincere words can make a whole day feel lighter.</p><textarea placeholder="Write a note…"></textarea><button class="send-button" id="sendNote">Send a little love →</button></dialog>
+    <div class="toast" id="toast" role="status">Your note is ready to send.</div>
+    <script src="./app.js"></script>
+  </body>
+</html>
